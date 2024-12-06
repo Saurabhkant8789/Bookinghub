@@ -13,13 +13,13 @@ module.exports = (phase) => {
 
     let AppURLLocal = 'http://localhost:3000';
     let AppURLLive = '';
-
     let ApiUrlLocal = 'http://localhost:3000/api/';
     let ApiUrlLive = '';
 
-    let dbUrlLocal = 'mongodb+srv://saurabhkant988:1AEmtbl6eskwnBhk@bookinghub.mcg3d.mongodb.net/?retryWrites=true&w=majority&appName=bookinghub'
-    let dbUrlLive = 'mongodb+srv://saurabhkant988:1AEmtbl6eskwnBhk@bookinghub.mcg3d.mongodb.net/?retryWrites=true&w=majority&appName=bookinghub'
-    
+    let dbUrlLocal = process.env.MONGO_URL
+
+    let dbUrlLive = process.env.MONGO_URL
+
     const env = {
         API_URL: (() => {
             if (isDev) {
