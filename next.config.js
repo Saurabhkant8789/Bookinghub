@@ -17,8 +17,8 @@ module.exports = (phase) => {
     let ApiUrlLocal = 'http://localhost:3000/api/';
     let ApiUrlLive = '';
 
-    let dbUrlLocal = ''
-    let dbUrlLive = ''
+    let dbUrlLocal = 'mongodb+srv://saurabhkant988:1AEmtbl6eskwnBhk@bookinghub.mcg3d.mongodb.net/?retryWrites=true&w=majority&appName=bookinghub'
+    let dbUrlLive = 'mongodb+srv://saurabhkant988:1AEmtbl6eskwnBhk@bookinghub.mcg3d.mongodb.net/?retryWrites=true&w=majority&appName=bookinghub'
     
     const env = {
         API_URL: (() => {
@@ -59,9 +59,9 @@ module.exports = (phase) => {
             if (isDev) {
                 return dbUrlLocal
             } else if (isProd) {
-                return dbUrlLocal
+                return dbUrlLive
             } else if (isStaging) {
-                return dbUrlLocal
+                return dbUrlLive
             } else {
                 return 'RESTURL_SPEAKERS:not (isDev,isProd && !isStaging,isProd && isStaging)'
             }
